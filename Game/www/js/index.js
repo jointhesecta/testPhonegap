@@ -39,23 +39,5 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
-        $("#game").hide();
-
-        var element = document.getElementById('game');
-
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-            'Device PhoneGap: ' + device.phonegap + '<br />' +
-            'Device Platform: ' + device.platform + '<br />' +
-            'Device UUID: '     + device.uuid     + '<br />' +
-            'Device Version: '  + device.version  + '<br />';
-
-        $("#inicar").on("click" ,function(){
-            alert("HOLA");
-            $("#index").hide();
-            $("#game").show();
-        });
-
     }
-
-
 };
