@@ -30,8 +30,10 @@
     <body>
     <script>
         document.addEventListener('deviceready', function () {
+            $('#game').hide();
             $('#iniciar').click(function () {
-                alert('hola');
+                $('#iniciar').hide();
+                $('#game').show();
             });
         });
     </script>
