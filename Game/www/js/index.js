@@ -37,6 +37,10 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        alert('hola');
+        var myApp = angular.module('myApp',[]);
+
+        myApp.controller('GreetingController', ['$scope', function($scope) {
+            $scope.greeting = 'Hola!';
+        }]);
     }
 };
