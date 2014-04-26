@@ -35,10 +35,31 @@
                 $('#iniciar').hide();
                 $('#game').show();
             });
+
+            var elementIdTouching = "";
+            $('body').on("touchmove", function(e){
+                var tList = e.touches; // get list of all touches
+                alert(tList.length);
+                for (var i = 0; i < tList.length; i++) {
+                    var thisTouch = tList[i]; // not 100% sure about this
+                    var elementTouching = document.elementFromPoint(
+                            thisTouch.screenX,
+                            thisTouch.screenY
+                    );
+                    alert(elementTouching.class);
+                    if (elementTouching.class != elementIdTouching) {
+                        elementIdTouching = elementTouching.class;
+                        if (elementTouching.class == "img2") {
+                            alert("entered!");
+                        }
+                    }
+                }
+            }).on("touchend", function(e){
+                elementIdTouching = "";
+            });
         });
     </script>
         <div id="index">
-
             <div class="topcoat-navigation-bar">
                 <div class="topcoat-navigation-bar__item center full">
                     <h1 class="topcoat-navigation-bar__title">Game Test</h1>
@@ -47,15 +68,68 @@
             <div class="topcoat-list__container">
                 <button id="iniciar" class="topcoat-button--large--cta" >Play</button>
             </div>
-
         </div>
 
         <div id="game">
-            HOLAAA
+            <table id="wrapper">
+                <tr id="col1">
+                    <td colspan="6">
+                        <img class="img1" src="assets/img/Stick.png" height="38px;" width="20px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <img class="img2" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img2" src="assets/img/Stick.png" height="38px;" width="20px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <img class="img3" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img3" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img3" src="assets/img/Stick.png" height="38px;" width="20px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <img class="img4" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img4" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img4" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img4" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img4" src="assets/img/Stick.png" height="38px;" width="20px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img5" src="assets/img/Stick.png" height="38px;" width="20px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                        <img class="img6" src="assets/img/Stick.png" height="38px;" width="20px;">
+                    </td>
+                </tr>
+            </table>
         </div>
-
+        <div id="log">
+            <p>Hola</p>
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/jquery.js"></script>
+        <script type="text/javascript" src="lib/fastclick.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/eventos.js"></script>
         <script type="text/javascript">
