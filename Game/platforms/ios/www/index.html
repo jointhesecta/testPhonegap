@@ -33,10 +33,20 @@
                 <h1 class="topcoat-navigation-bar__title">Game Test</h1>
             </div>
         </div>
+        <script>
+            document.addEventListener('deviceready', function () {
+                alert('funciona!');
+                $('.prueba').click(function(event) {
+                    event.preventDefault();
+                    alert('funciona!');
+                });
+            });
+        </script>
         <div>
-            <button class="topcoat-button--large--cta" >Play</button>
+            <button class="topcoat-button--large--cta prueba" >Play</button>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="lib/jquery.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
