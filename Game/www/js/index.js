@@ -34,13 +34,28 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var myApp = angular.module('myApp',[]);
 
-        myApp.controller('GreetingController', ['$scope', function($scope) {
-            $scope.greeting = 'Hola!';
-        }]);
+        $("#game").hide();
+
+        var element = document.getElementById('game');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+            'Device PhoneGap: ' + device.phonegap + '<br />' +
+            'Device Platform: ' + device.platform + '<br />' +
+            'Device UUID: '     + device.uuid     + '<br />' +
+            'Device Version: '  + device.version  + '<br />';
+
+        $("#inicar").on("click" ,function(){
+            alert("HOLA");
+            $("#index").hide();
+            $("#game").show();
+        });
+
     }
+
+
 };

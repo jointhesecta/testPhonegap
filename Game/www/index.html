@@ -28,22 +28,31 @@
         <title>Hello World</title>
     </head>
     <body>
+    <div id="index">
+
         <div class="topcoat-navigation-bar">
             <div class="topcoat-navigation-bar__item center full">
                 <h1 class="topcoat-navigation-bar__title">Game Test</h1>
             </div>
         </div>
         <div ng-controller="GreetingController">
-            {{greeting}}
+
         </div>
         <div class="topcoat-list__container">
-            <button class="topcoat-button--large--cta prueba" >Play</button>
+            <button id="iniciar" class="topcoat-button--large--cta" >Play</button>
+        </div>
+
+    </div>
+
+        <div id="game">
+            HOLAAA
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/jquery.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/eventos.js"></script>
+
 
         <script type="text/javascript">
             app.initialize();
