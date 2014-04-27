@@ -9,16 +9,19 @@ var turn = 1;
 
 document.addEventListener('deviceready', function () {
     $('#game').hide();
+    $('#gameButtons').hide();
     $('#iniciar').click(function () {
         $('#iniciar').hide();
         $('#game').show();
         $('#log').prepend("Empieza el juego");
+        $('#gameButtons').show();
     });
 
     // Nuevo codigo
 
     document.getElementById('game').addEventListener('touchmove', function (event) {
         event.preventDefault();
+
         for (var i = 0; i < event.touches.length; i++) {
             var touch = event.touches[i];
 
@@ -54,9 +57,23 @@ function addStick(stick) {
     }
 }
 
+function onConfirm(buttonIndex) {
+    if (buttonIndex === 2) {
+        $('#game').hide();
+        $('#index').show();
+        $('#iniciar').show();
+        $('#gameButtons').hide();
+    }
+}
+
 function changeTurn() {
     if (lastSticksSelected.length < 1) {
-        alert('Tienes que seleccionar un palo para cambiar el turno');
+        navigator.notification.alert(
+            'Tienes que seleccionar un palo para cambiar el turno',    // message
+            null,       // callback
+            "Game Test", // title
+            'OK'        // buttonName
+        );
     } else {
 
         for (var i = 0; i < lastSticksSelected.length; i++) {
@@ -66,20 +83,40 @@ function changeTurn() {
 
         if (turn == 1) {
             if (numSticks === totalSticks) {
-                alert('Jugador '+ turn +', has perdido');
+                navigator.notification.confirm(
+                    'Jugador ' + turn + ', has perdido',  // message
+                    onConfirm,              // callback to invoke with index of button pressed
+                    'Game Over',            // title
+                    'Restart,Exit'          // buttonLabels
+                );
             }
 
             turn = 2;
-            if (numSticks === totalSticks -1) {
-                alert('Jugador '+ turn +', has perdido');
+            if (numSticks === totalSticks - 1) {
+                navigator.notification.confirm(
+                    'Jugador ' + turn + ', has perdido',  // message
+                    onConfirm,              // callback to invoke with index of button pressed
+                    'Game Over',            // title
+                    'Restart,Exit'          // buttonLabels
+                );
             }
         } else {
-            if (numSticks === totalSticks ) {
-                alert('Jugador '+ turn +', has perdido');
+            if (numSticks === totalSticks) {
+                navigator.notification.confirm(
+                    'Jugador ' + turn + ', has perdido',  // message
+                    onConfirm,              // callback to invoke with index of button pressed
+                    'Game Over',            // title
+                    'Restart,Exit'          // buttonLabels
+                );
             }
             turn = 1;
-            if (numSticks === totalSticks -1) {
-                alert('Jugador '+ turn +', has perdido');
+            if (numSticks === totalSticks - 1) {
+                navigator.notification.confirm(
+                    'Jugador ' + turn + ', has perdido',  // message
+                    onConfirm,              // callback to invoke with index of button pressed
+                    'Game Over',            // title
+                    'Restart,Exit'          // buttonLabels
+                );
             }
         }
         lastSticksSelected = [];
@@ -87,8 +124,8 @@ function changeTurn() {
     }
 }
 
-function restartSelected(){
-    for(var st = 0; st < lastSticksSelected.length; st++){
+function restartSelected() {
+    for (var st = 0; st < lastSticksSelected.length; st++) {
         lastSticksSelected[st].src = "assets/img/Stick.png";
     }
     lastSticksSelected = [];
@@ -113,13 +150,13 @@ function equalRow() {
     return true;
 }
 
-function consecutiveStick(){
-    if(lastSticksSelected.length <= 1){
+function consecutiveStick() {
+    if (lastSticksSelected.length <= 1) {
         return true;
     }
 
-    for(var st = 1; st < lastSticksSelected.length; st++){
-        var stiSel = lastSticksSelected[0].id.split("-")[1].replace("stick","");
+    for (var st = 1; st < lastSticksSelected.length; st++) {
+        var stiSel = lastSticksSelected[0].id.split("-")[1].replace("stick", "");
 
     }
 }

@@ -32,17 +32,27 @@
 <body>
 <div id="index">
     <div class="topcoat-navigation-bar">
-        <div class="topcoat-navigation-bar__item center full">
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet" onclick="alert('Search clicked')">
+                <span class="topcoat-icon icon-search"></span>
+            </a>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
             <h1 class="topcoat-navigation-bar__title">Game Test</h1>
         </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet" onclick="alert('Search clicked')">
+                <span class="topcoat-icon icon-refresh"></span>
+            </a>
+        </div>
     </div>
-    <div class="topcoat-list__container">
+    <div class="topcoat-list__container topcoat-grid__offset--4 topcoat-grid__column--1 botton">
         <button id="iniciar" class="topcoat-button--large--cta" >Play</button>
     </div>
 </div>
 
 <div id="game">
-    <div class=" topcoat-grid__offset--4 topcoat-grid__column--1">
+    <div class="topcoat-grid__offset--4 topcoat-grid__column--1">
         <img id="fila1-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
     </div>
     <div class="topcoat-grid__offset--3 topcoat-grid__column--2">
