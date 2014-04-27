@@ -3,6 +3,7 @@
  */
 
 var numSticks = 0;
+var totalSticks = 10;
 var lastSticksSelected = [];
 var turn = 1;
 
@@ -58,33 +59,30 @@ function changeTurn() {
         alert('Tienes que seleccionar un palo para cambiar el turno');
     } else {
         var i = 0;
+
+        for (i = 0; i < lastSticksSelected.length; i++) {
+            lastSticksSelected[i].id = 1;
+            numSticks++;
+        }
+        if (numSticks === 10 || numSticks === 9) {
+            alert('Jugador '+turn +', has perdido');
+        }
+
         if (turn == 1) {
-            for (i = 0; i < lastSticksSelected.length; i++) {
-                lastSticksSelected[i].id = 1;
-                numSticks++;
-            }
-            if (numSticks === 10 || numSticks === 9) {
-                alert('Jugador 1, has perdido');
-            }
             turn = 2;
         } else {
-            for (i = 0; i < lastSticksSelected.length; i++) {
-                lastSticksSelected[i].id = 1;
-                numSticks++;
-            }
-            if (numSticks === 10 || numSticks === 9) {
-                alert('Jugador 1, has perdido');
-            }
             turn = 1;
         }
 
         lastSticksSelected = [];
         $('#log').prepend("<p> Usuario : " + turn + "</p>");
     }
+    lastSticksSelected = [];
+    $('#log').prepend("<p> Usuario : "+ turn +"</p>");
 }
 
-function restartSelected() {
-    for (var st = 1; st < lastSticksSelected.length; st++) {
+function restartSelected(){
+    for(var st = 0; st < lastSticksSelected.length; st++){
         lastSticksSelected[st].src = "assets/img/Stick.png";
     }
     lastSticksSelected = [];
@@ -106,12 +104,18 @@ function equalRow() {
         rowSel = lastSticksSelected[st].id.split("-")[0].replace("fila", "");
     }
 
-
     return true;
 }
 
-function consecutiveStick() {
-    var stiSel = lastSticksSelected[0].id.split("-")[1].replace("stick", "");
+function consecutiveStick(){
+    if(lastSticksSelected.length <= 1){
+        return true;
+    }
+
+    for(var st = 1; st < lastSticksSelected.length; st++){
+        var stiSel = lastSticksSelected[0].id.split("-")[1].replace("stick","");
+
+    }
 }
 
 function selectStick(stick) {
