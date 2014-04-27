@@ -58,27 +58,33 @@ function changeTurn() {
     if (lastSticksSelected.length < 1) {
         alert('Tienes que seleccionar un palo para cambiar el turno');
     } else {
-        var i = 0;
 
-        for (i = 0; i < lastSticksSelected.length; i++) {
-            lastSticksSelected[i].id = 1;
+        for (var i = 0; i < lastSticksSelected.length; i++) {
+            lastSticksSelected[i].id = turn;
             numSticks++;
-        }
-        if (numSticks === 10 || numSticks === 9) {
-            alert('Jugador '+turn +', has perdido');
         }
 
         if (turn == 1) {
-            turn = 2;
-        } else {
-            turn = 1;
-        }
+            if (numSticks === totalSticks) {
+                alert('Jugador '+ turn +', has perdido');
+            }
 
+            turn = 2;
+            if (numSticks === totalSticks -1) {
+                alert('Jugador '+ turn +', has perdido');
+            }
+        } else {
+            if (numSticks === totalSticks ) {
+                alert('Jugador '+ turn +', has perdido');
+            }
+            turn = 1;
+            if (numSticks === totalSticks -1) {
+                alert('Jugador '+ turn +', has perdido');
+            }
+        }
         lastSticksSelected = [];
         $('#log').prepend("<p> Usuario : " + turn + "</p>");
     }
-    lastSticksSelected = [];
-    $('#log').prepend("<p> Usuario : "+ turn +"</p>");
 }
 
 function restartSelected(){
