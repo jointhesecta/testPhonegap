@@ -19,11 +19,12 @@
 -->
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
     <link href="assets/topcoat/css/topcoat-mobile-light.css" rel="stylesheet">
     <link href="assets/css/grid.css" rel="stylesheet">
     <link href="assets/css/game.css" rel="stylesheet">
@@ -47,40 +48,82 @@
         </div>
     </div>
     <div class="topcoat-list__container topcoat-grid__offset--4 topcoat-grid__column--1 botton">
-        <button id="iniciar" class="topcoat-button--large--cta" >Play</button>
+        <button id="iniciar" class="topcoat-button--large--cta">Play</button>
     </div>
 </div>
 
 <div id="game">
-    <div class="topcoat-grid__offset--4 topcoat-grid__column--1">
+    <p style="text-align: center;" id="turnGame">Turno jugador 1</p>
+    <div class="topcoat-grid__offset--5 topcoat-grid__column--1">
         <img id="fila1-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
     </div>
-    <div class="topcoat-grid__offset--3 topcoat-grid__column--2">
+    <div class="topcoat-grid__column--2" style="margin-left: 37.999999999999996%;">
         <img id="fila2-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
         <img id="fila2-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
     </div>
-    <div class="topcoat-grid__offset--2 topcoat-grid__column--3">
+    <div class="topcoat-grid__column--3" style="margin-left: 34.333333333333336%;">
         <img id="fila3-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
         <img id="fila3-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
         <img id="fila3-stick3" src="assets/img/Stick.png" height="38px;" width="20px;">
     </div>
-    <div class="topcoat-grid__offset--1 topcoat-grid__column--4">
+    <div class="topcoat-grid__column--1" style=" margin-left: 30.333333333333336%;">
         <img id="fila4-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
         <img id="fila4-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
         <img id="fila4-stick3" src="assets/img/Stick.png" height="38px;" width="20px;">
         <img id="fila4-stick4" src="assets/img/Stick.png" height="38px;" width="20px;">
     </div>
+    <div class="topcoat-grid__column--4" style="margin-left: 27%;">
+        <img id="fila5-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick3" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick4" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick5" src="assets/img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--4" style="margin-left: 23%;">
+        <img id="fila6-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila6-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila6-stick3" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila6-stick4" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila6-stick5" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila6-stick6" src="assets/img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--3" style="margin-left: 19.666666666666668%;">
+        <img id="fila7-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick3" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick4" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick5" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick6" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick7" src="assets/img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--4" style="margin-left: 15.666666666666668%;">
+        <img id="fila8-stick1" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick2" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick3" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick4" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick5" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick6" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick7" src="assets/img/Stick.png" height="38px;" width="20px;">
+        <img id="fila8-stick8" src="assets/img/Stick.png" height="38px;" width="20px;">
+    </div>
+</div>
+<div class="topcoat-navigation-bar full game" style="position: fixed; bottom: 0px;">
+    <div class="topcoat-navigation-bar__item left quarter">
+        Player 1 <img src="assets/img/whiteStick.png" height="18px;" width="10px;">
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <button class="topcoat-tab-bar__button" onclick="changeTurn()">Pasar Turno</button>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+        Player 2 <img src="assets/img/blueStick.png" height="18px;" width="10px;">
+    </div>
+</div>
+<div class="topcoat-navigation-bar full inicio" style="position: fixed; bottom: 0px;">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="topcoat-navigation-bar__title">JTS &copy;2014</h1>
+    </div>
+</div>
 
-</div>
-<div id="gameButtons">
-    <label class="topcoat-switch" >
-        <input type="checkbox" class="topcoat-switch__input" onchange="changeTurn()" >
-        <div class="topcoat-switch__toggle"></div>
-    </label>
-
-</div>
-<div id="log">
-</div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="lib/fastclick.js"></script>

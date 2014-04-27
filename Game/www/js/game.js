@@ -3,18 +3,18 @@
  */
 
 var numSticks = 0;
-var totalSticks = 10;
+var totalSticks = 36;
 var lastSticksSelected = [];
 var turn = 1;
 
 document.addEventListener('deviceready', function () {
     $('#game').hide();
-    $('#gameButtons').hide();
+    $('.game').hide();
     $('#iniciar').click(function () {
         $('#iniciar').hide();
         $('#game').show();
-        $('#log').prepend("Empieza el juego");
-        $('#gameButtons').show();
+        $('.game').show();
+        $('.inicio').hide();
     });
 
     // Nuevo codigo
@@ -66,7 +66,6 @@ function onConfirm(buttonIndex) {
         $('#game').hide();
         $('#index').show();
         $('#iniciar').show();
-        $('#gameButtons').hide();
     }
 }
 
@@ -96,6 +95,7 @@ function changeTurn() {
             }
 
             turn = 2;
+            $('#turnGame').html('Turno jugador 2');
             if (numSticks === totalSticks - 1) {
                 navigator.notification.confirm(
                     'Jugador ' + turn + ', has perdido',  // message
@@ -114,6 +114,7 @@ function changeTurn() {
                 );
             }
             turn = 1;
+            $('#turnGame').html('Turno jugador 1');
             if (numSticks === totalSticks - 1) {
                 navigator.notification.confirm(
                     'Jugador ' + turn + ', has perdido',  // message
