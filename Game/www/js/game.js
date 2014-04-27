@@ -37,10 +37,14 @@ document.addEventListener('deviceready', function () {
                     //var stick = id.split("-")[1].replace("stick","");
                     //$('#log').prepend("<p> stick: "+ elementTouching.id +"</p>");
                     addStick(elementTouching);
-                    if (equalRow()) {
+                    if(lastSticksSelected.length > 1){
+                        if (equalRow() && consecutiveStick()) {
+                            selectStick(elementTouching);
+                        } else {
+                            restartSelected();
+                        }
+                    }{
                         selectStick(elementTouching);
-                    } else {
-                        restartSelected();
                     }
                 }
             }
@@ -120,7 +124,6 @@ function changeTurn() {
             }
         }
         lastSticksSelected = [];
-        $('#log').prepend("<p> Usuario : " + turn + "</p>");
     }
 }
 
@@ -150,15 +153,23 @@ function equalRow() {
     return true;
 }
 
-function consecutiveStick() {
-    if (lastSticksSelected.length <= 1) {
-        return true;
+function consecutiveStick(){
+    var stiSel = [];
+    for(var i = 0; i < lastSticksSelected.length; i++) {
+        stiSel.push(parseInt(lastSticksSelected[i].id.split("-")[1].replace("stick", "")));
     }
+    stiSel = stiSel.sort();
+    var ordenado = false;
+    for(var i = 0; i < stiSel.length - 1; i++) {
+        $('#log').prepend("<p>test:"+stiSel[i]+" == "+(stiSel[i+1] - 1)+"</p>");
 
-    for (var st = 1; st < lastSticksSelected.length; st++) {
-        var stiSel = lastSticksSelected[0].id.split("-")[1].replace("stick", "");
-
+        if (stiSel[i] == (stiSel[i+1] - 1)){
+            ordenado = true;
+        }else{
+            return false;
+        }
     }
+    return ordenado;
 }
 
 function selectStick(stick) {
