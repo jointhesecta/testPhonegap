@@ -113,3 +113,27 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#game {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#wrapper {
+    height:100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#wrapper td {
+    vertical-align: middle;
+    text-align: center;
+}
