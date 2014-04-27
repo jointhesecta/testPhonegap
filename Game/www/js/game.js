@@ -161,8 +161,6 @@ function consecutiveStick(){
     stiSel = stiSel.sort();
     var ordenado = false;
     for(var i = 0; i < stiSel.length - 1; i++) {
-        $('#log').prepend("<p>test:"+stiSel[i]+" == "+(stiSel[i+1] - 1)+"</p>");
-
         if (stiSel[i] == (stiSel[i+1] - 1)){
             ordenado = true;
         }else{

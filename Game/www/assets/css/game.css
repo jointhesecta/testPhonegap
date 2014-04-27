@@ -4,13 +4,13 @@
     border-radius: 4px;
     border: 1px solid hsla(180, 1%, 20%, 1);
     overflow: hidden;
-    width: 3.5rem;
+    width: 10.5rem;
 }
 
 .topcoat-switch__toggle:before,
 .topcoat-switch__toggle:after {
     top: -1px;
-    width: 2.6rem;
+    width: 9.6rem;
 }
 
 .topcoat-switch__toggle:before {
@@ -22,8 +22,8 @@
 }
 
 .topcoat-switch__toggle {
-    line-height: 1.313rem;
-    height: 1.313rem;
+    line-height: 3.313rem;
+    height: 3.313rem;
     width: 1rem;
     border-radius: 4px;
     color: hsla(180, 2%, 78%, 1);
@@ -47,7 +47,7 @@
 }
 
 .topcoat-switch__input:checked + .topcoat-switch__toggle {
-    margin-left: 1.85rem;
+    margin-left: 5.85rem;
 }
 
 .topcoat-switch__input:active + .topcoat-switch__toggle {
@@ -65,4 +65,8 @@
 .topcoat-switch__input:disabled + .topcoat-switch__toggle:after,
 .topcoat-switch__input:disabled + .topcoat-switch__toggle:before {
     background: transparent;
+}
+
+.footerGame{
+    vertical-align: top;
 }
