@@ -8,12 +8,12 @@ var lastSticksSelected = [];
 var turn = 1;
 
 document.addEventListener('deviceready', function () {
-    $('#game').hide();
-    $('.game').hide();
+
     $('#iniciar').click(function () {
         $('#iniciar').hide();
         $('#game').show();
         $('.game').show();
+        $('#iconReplay').show();
         $('.inicio').hide();
     });
 

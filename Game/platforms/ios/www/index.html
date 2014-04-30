@@ -34,20 +34,22 @@
 <div id="index">
     <div class="topcoat-navigation-bar">
         <div class="topcoat-navigation-bar__item right quarter">
-            <a class="topcoat-icon-button--quiet" onclick="alert('Search clicked')">
-                <span class="topcoat-icon icon-search"></span>
-            </a>
         </div>
         <div class="topcoat-navigation-bar__item center half">
             <h1 class="topcoat-navigation-bar__title">Game Test</h1>
         </div>
         <div class="topcoat-navigation-bar__item right quarter">
-            <a class="topcoat-icon-button--quiet" onclick="alert('Search clicked')">
-                <span class="topcoat-icon icon-refresh"></span>
+            <a class="topcoat-icon-button--quiet" onclick="replay()" id="iconReplay">
+                <img style="margin-top: 15px;" src="assets/img/reload.png" height="35px;" width="35px;">
             </a>
         </div>
     </div>
     <div class="topcoat-list__container topcoat-grid__offset--4 topcoat-grid__column--1 botton">
+        <!--<div>
+            <input type="text" name="prueba" id="prueba"/>
+            <button id="buttonServer" class="topcoat-button--large--cta">Enviar</button>
+        </div>
+        <div id="log"></div>-->
         <button id="iniciar" class="topcoat-button--large--cta">Play</button>
     </div>
 </div>
@@ -127,8 +129,10 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="lib/fastclick.js"></script>
+<!--<script src="lib/socket.io.js"></script>-->
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/game.js"></script>
+<!--<script type="text/javascript" src="js/socket.js"></script>-->
 <script type="text/javascript">
     app.initialize();
 </script>

@@ -39,5 +39,8 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         FastClick.attach(document.body);
+        $('#game').hide();
+        $('.game').hide();
+        $('#iconReplay').hide();
     }
 };

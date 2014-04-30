@@ -1,0 +1,10 @@
+{
+    "name": "SocketTest",
+    "version": "0.0.1",
+    "description": "SocketTest",
+    "dependencies": {
+        "socket.io": "latest",
+        "moniker": "latest"
+    },
+    "author": "JTS"
+}
