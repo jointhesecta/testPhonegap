@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link href="topcoat/css/topcoat-mobile-light.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/game.css" rel="stylesheet">
+    <title>The Last Stick</title>
+</head>
+<body>
+<div id="index">
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item right quarter">
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Game Test</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet" onclick="replay()" id="iconReplay">
+                <img style="margin-top: 15px;" src="img/reload.png" height="35px;" width="35px;">
+            </a>
+        </div>
+    </div>
+    <div class="topcoat-list__container" id="panelInicial">
+        <p id="welcome" style="text-align: center;" ></p>
+        <div class="topcoat-list topcoat-list__item" id="insertUser">
+            <h3 class="topcoat-list__header" id="usersHeader" >Usuarios</h3>
+            <ul class="topcoat-list__container" id="userList">
+            </ul>
+            <button id="iniciar" class="topcoat-button--large--cta">Play</button>
+        </div>
+        <div class="topcoat-list__container" id="newUserForm" >
+            <input id="nameInput" type="text" class="topcoat-text-input" placeholder="Nombre de usuario" >
+            <button id="buttonServer" class="topcoat-button--cta">Join</button>
+        </div>
+    </div>
+</div>
+
+<div id="game">
+    <p style="text-align: center;" id="turnGame"></p>
+    <div class="topcoat-grid__offset--5 topcoat-grid__column--1">
+        <img id="fila1-stick1" src="img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--3" style="margin-left: 34.333333333333336%;">
+        <img id="fila3-stick1" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila3-stick2" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila3-stick3" src="img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--4" style="margin-left: 27%;">
+        <img id="fila5-stick1" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick2" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick3" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick4" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila5-stick5" src="img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--3" style="margin-left: 19.666666666666668%;">
+        <img id="fila7-stick1" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick2" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick3" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick4" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick5" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick6" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila7-stick7" src="img/Stick.png" height="38px;" width="20px;">
+    </div>
+    <div class="topcoat-grid__column--4" style="margin-left: 15.666666666666668%;">
+        <img id="fila9-stick1" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick2" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick3" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick4" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick5" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick6" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick7" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick8" src="img/Stick.png" height="38px;" width="20px;">
+        <img id="fila9-stick9" src="img/Stick.png" height="38px;" width="20px;">
+    </div>
+</div>
+<div class="topcoat-navigation-bar full game" style="position: fixed; bottom: 0px;">
+    <div id="user1" class="topcoat-navigation-bar__item left quarter">
+
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <button class="topcoat-tab-bar__button" onclick="changeTurn()">Pasar Turno</button>
+    </div>
+    <div id="user2" class="topcoat-navigation-bar__item right quarter">
+
+    </div>
+</div>
+<div class="topcoat-navigation-bar full inicio" style="position: fixed; bottom: 0px;">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="topcoat-navigation-bar__title">JTS &copy;2014</h1>
+    </div>
+</div>
+
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/cordova-2.2.0_desktop.js"></script>
+<script type="text/javascript" src="lib/fastclick.js"></script>
+<script type="text/javascript" src="lib/socket.io.js"></script>
+
+<!--<script src="lib/socket.io.js"></script>-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/socket.js"></script>
+
+<!--<script type="text/javascript" src="js/socket.js"></script>-->
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
+</html>

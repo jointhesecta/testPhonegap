@@ -1,10 +1,20 @@
 {
-    "name": "SocketTest",
-    "version": "0.0.1",
-    "description": "SocketTest",
+    "name": "socketio",
+    "version": "0.0.0",
+    "description": "",
+    "main": "server.js",
     "dependencies": {
-        "socket.io": "latest",
-        "moniker": "latest"
+        "socket.io": "~0.9.16",
+        "express": "~3.5.1",
+        "connect": "^2.14.5",
+        "http": "0.0.0",
+        "cookie": "^0.1.2"
     },
-    "author": "JTS"
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "JoinTheSecta",
+    "license": "ISC"
 }
